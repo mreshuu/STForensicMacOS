@@ -1,0 +1,81 @@
+{
+  "project_name": "STForensicMacOS",
+  "version": "1.0.0",
+  "description": "MacOS Forensic Analysis Tool",
+  "author": "STForensic Team",
+  "language": "Python",
+  "python_version": "3.8+",
+  "target_os": "macOS",
+  "architecture": "x86_64, arm64",
+  "license": "MIT",
+  "modules": [
+    {
+      "name": "system_info",
+      "description": "Sistem bilgileri toplama",
+      "dependencies": ["psutil", "platform"],
+      "commands": ["system_profiler", "ioreg", "sysctl"]
+    },
+    {
+      "name": "filesystem",
+      "description": "Dosya sistemi analizi",
+      "dependencies": ["hashlib", "os", "stat"],
+      "commands": ["find", "md5", "sha256", "ls"]
+    },
+    {
+      "name": "memory",
+      "description": "Bellek analizi",
+      "dependencies": ["psutil"],
+      "commands": ["vm_stat", "top", "lsof"]
+    },
+    {
+      "name": "network",
+      "description": "Ağ analizi",
+      "dependencies": ["psutil", "socket"],
+      "commands": ["netstat", "ifconfig", "arp", "route"]
+    },
+    {
+      "name": "logs",
+      "description": "Log analizi",
+      "dependencies": ["re", "datetime"],
+      "commands": ["log", "system.log", "auth.log"]
+    },
+    {
+      "name": "processes",
+      "description": "Process analizi",
+      "dependencies": ["psutil"],
+      "commands": ["ps", "lsof", "launchctl"]
+    },
+    {
+      "name": "users",
+      "description": "Kullanıcı analizi",
+      "dependencies": ["pwd", "grp"],
+      "commands": ["dscl", "id", "who"]
+    },
+    {
+      "name": "timeline",
+      "description": "Zaman çizelgesi analizi",
+      "dependencies": ["datetime", "stat"],
+      "commands": ["find", "stat", "mdls"]
+    }
+  ],
+  "modes": {
+    "lite": {
+      "description": "Hızlı analiz - Temel bilgiler",
+      "modules": ["system_info", "processes", "network", "users"],
+      "estimated_time": "1-2 dakika"
+    },
+    "full": {
+      "description": "Tam imaj - Kapsamlı analiz",
+      "modules": ["system_info", "filesystem", "memory", "network", "logs", "processes", "users", "timeline"],
+      "estimated_time": "12-15 dakika"
+    }
+  },
+  "output_formats": ["json", "html", "pdf", "csv"],
+  "security_requirements": ["root_access", "read_only", "hash_verification"],
+  "development_phases": [
+    "Phase 1: Temel modüller",
+    "Phase 2: Raporlama sistemi",
+    "Phase 3: GUI arayüzü",
+    "Phase 4: Gelişmiş analizler"
+  ]
+} 

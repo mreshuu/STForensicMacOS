@@ -1,0 +1,49 @@
+version: '3.8'
+
+services:
+  stforensicmacos:
+    build: .
+    container_name: stforensicmacos
+    volumes:
+      - ./reports:/app/reports
+      - ./test_reports:/app/test_reports
+      - /var/log:/host/var/log:ro
+      - /etc:/host/etc:ro
+      - /Users:/host/Users:ro
+    environment:
+      - PYTHONPATH=/app
+    command: ["python3", "main.py", "--mode", "lite", "--output", "./reports"]
+    restart: unless-stopped
+    privileged: true  # Required for forensic analysis
+    security_opt:
+      - seccomp:unconfined
+    cap_add:
+      - SYS_ADMIN
+      - SYS_PTRACE
+      - NET_ADMIN
+      - NET_RAW
+    networks:
+      - stforensic-network
+
+  # Optional: Web interface service (future)
+  # web:
+  #   build: ./web
+  #   container_name: stforensic-web
+  #   ports:
+  #     - "8000:8000"
+  #   volumes:
+  #     - ./reports:/app/reports:ro
+  #   depends_on:
+  #     - stforensicmacos
+  #   networks:
+  #     - stforensic-network
+
+networks:
+  stforensic-network:
+    driver: bridge
+
+volumes:
+  reports:
+    driver: local
+  test_reports:
+    driver: local 

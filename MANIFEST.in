@@ -1,0 +1,29 @@
+include README.md
+include LICENSE
+include CHANGELOG.md
+include CONTRIBUTING.md
+include SECURITY.md
+include CODE_OF_CONDUCT.md
+include requirements.txt
+include project_details.json
+include roadmap.md
+include .gitignore
+
+recursive-include src *.py
+recursive-include static *
+recursive-include templates *
+
+global-exclude *.pyc
+global-exclude *.pyo
+global-exclude *.pyd
+global-exclude __pycache__
+global-exclude *.so
+global-exclude .DS_Store
+global-exclude Thumbs.db
+global-exclude test_reports/*
+global-exclude reports/*
+global-exclude *.log
+global-exclude *.json.sha256
+global-exclude *.html.sha256
+global-exclude *.pdf.sha256
+global-exclude *.csv.sha256 
