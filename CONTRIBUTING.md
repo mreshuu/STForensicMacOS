@@ -1,77 +1,77 @@
 # Contributing to STForensicMacOS
 
-STForensicMacOS projesine katkıda bulunmak istediğiniz için teşekkürler! Bu belge, projeye nasıl katkıda bulunabileceğinizi açıklar.
+Thank you for your interest in contributing to STForensicMacOS! This document explains how you can contribute to the project.
 
-## 🚀 Başlarken
+## 🚀 Getting Started
 
-### Geliştirme Ortamı Kurulumu
+### Development Environment Setup
 
-1. **Repository'yi fork edin ve klonlayın:**
+1. **Fork and clone the repository:**
 ```bash
 git clone https://github.com/silexi/stforensicmacos.git
 cd stforensicmacos
 ```
 
-2. **Sanal ortam oluşturun:**
+2. **Create a virtual environment:**
 ```bash
 python3 -m venv venv
 source venv/bin/activate  # macOS/Linux
-# veya
+# or
 venv\Scripts\activate  # Windows
 ```
 
-3. **Bağımlılıkları yükleyin:**
+3. **Install dependencies:**
 ```bash
 pip install -r requirements.txt
 ```
 
-4. **Geliştirme bağımlılıklarını yükleyin:**
+4. **Install development dependencies:**
 ```bash
-pip install -r requirements-dev.txt  # Eğer varsa
+pip install -r requirements-dev.txt  # If available
 ```
 
-## 📝 Katkı Türleri
+## 📝 Types of Contributions
 
 ### 🐛 Bug Reports
-- GitHub Issues kullanın
-- Açıklayıcı başlık kullanın
-- Adım adım yeniden üretim talimatları ekleyin
-- Beklenen ve gerçek davranışı açıklayın
-- Sistem bilgilerini ekleyin (macOS versiyonu, Python versiyonu)
+- Use GitHub Issues
+- Use descriptive titles
+- Include step-by-step reproduction instructions
+- Explain expected vs actual behavior
+- Include system information (macOS version, Python version)
 
 ### 💡 Feature Requests
-- Özelliğin amacını açıklayın
-- Kullanım senaryolarını belirtin
-- Varsa örnek implementasyon önerin
+- Explain the purpose of the feature
+- Specify use cases
+- Suggest implementation if possible
 
 ### 🔧 Code Contributions
-- Fork ve pull request workflow kullanın
-- Feature branch'ler oluşturun
-- Kod standartlarına uyun
-- Test ekleyin (mümkünse)
+- Use fork and pull request workflow
+- Create feature branches
+- Follow coding standards
+- Add tests when possible
 
-## 🏗️ Kod Standartları
+## 🏗️ Coding Standards
 
-### Python Kod Stili
-- PEP 8 standartlarına uyun
-- 4 boşluk girinti kullanın
-- 79 karakter satır uzunluğu
-- Docstring'ler ekleyin
-- Type hints kullanın
+### Python Code Style
+- Follow PEP 8 standards
+- Use 4-space indentation
+- 79 character line length
+- Add docstrings
+- Use type hints
 
-### Commit Mesajları
-- Açıklayıcı ve kısa olun
-- İngilizce kullanın
-- Conventional commits formatını takip edin:
-  - `feat:` Yeni özellik
-  - `fix:` Bug düzeltmesi
-  - `docs:` Dokümantasyon
-  - `style:` Kod stili
+### Commit Messages
+- Be descriptive and concise
+- Use English
+- Follow conventional commits format:
+  - `feat:` New feature
+  - `fix:` Bug fix
+  - `docs:` Documentation
+  - `style:` Code style
   - `refactor:` Refactoring
-  - `test:` Test ekleme/düzenleme
-  - `chore:` Bakım işleri
+  - `test:` Test addition/update
+  - `chore:` Maintenance tasks
 
-### Örnek Commit Mesajları
+### Example Commit Messages
 ```
 feat: Add memory dump functionality
 fix: Resolve IPv6 address parsing issue
@@ -79,110 +79,110 @@ docs: Update README with installation instructions
 style: Format code according to PEP 8
 ```
 
-## 🧪 Test Etme
+## 🧪 Testing
 
-### Manuel Test
+### Manual Testing
 ```bash
 # Lite mode test
 sudo python3 main.py --mode lite --output ./test_reports
 
-# Belirli modül testi
+# Specific module test
 sudo python3 main.py --modules network --output ./test_reports
 
-# HTML rapor testi
+# HTML report test
 sudo python3 main.py --mode lite --output ./test_reports --format html
 ```
 
-### Otomatik Test (Gelecekte)
+### Automated Testing (Future)
 ```bash
-# Unit testler
+# Unit tests
 python -m pytest tests/
 
-# Coverage raporu
+# Coverage report
 python -m pytest --cov=src tests/
 ```
 
-## 📋 Pull Request Süreci
+## 📋 Pull Request Process
 
-1. **Issue oluşturun** (eğer yoksa)
-2. **Feature branch oluşturun:**
+1. **Create an issue** (if none exists)
+2. **Create a feature branch:**
    ```bash
    git checkout -b feature/your-feature-name
    ```
-3. **Değişikliklerinizi yapın**
-4. **Test edin**
-5. **Commit edin:**
+3. **Make your changes**
+4. **Test your changes**
+5. **Commit your changes:**
    ```bash
    git add .
    git commit -m "feat: Add your feature description"
    ```
-6. **Push edin:**
+6. **Push your changes:**
    ```bash
    git push origin feature/your-feature-name
    ```
-7. **Pull Request oluşturun**
+7. **Create a Pull Request**
 
 ### Pull Request Checklist
-- [ ] Kod standartlarına uygun
-- [ ] Test edilmiş
-- [ ] Dokümantasyon güncellenmiş
-- [ ] Commit mesajları açıklayıcı
-- [ ] Issue referansı eklenmiş
+- [ ] Code follows standards
+- [ ] Tested
+- [ ] Documentation updated
+- [ ] Commit messages descriptive
+- [ ] Issue reference added
 
-## 🔒 Güvenlik
+## 🔒 Security
 
-### Güvenlik Açıkları
-- Güvenlik açıklarını doğrudan maintainer'a bildirin
-- Public issue oluşturmayın
-- Detaylı bilgi sağlayın
+### Security Vulnerabilities
+- Report security vulnerabilities directly to maintainers
+- Don't create public issues
+- Provide detailed information
 
-### Güvenlik Prensipleri
-- Sadece okuma işlemleri yapın
-- Kullanıcı verilerini koruyun
-- Root yetkisi kontrolü yapın
-- Hash doğrulama kullanın
+### Security Principles
+- Perform read-only operations only
+- Protect user data
+- Check root privileges
+- Use hash verification
 
-## 📚 Dokümantasyon
+## 📚 Documentation
 
-### Kod Dokümantasyonu
-- Tüm fonksiyonlar için docstring ekleyin
-- Karmaşık algoritmalar için açıklama ekleyin
-- Örnek kullanım ekleyin
+### Code Documentation
+- Add docstrings for all functions
+- Explain complex algorithms
+- Include usage examples
 
-### README Güncellemeleri
-- Yeni özellikler için dokümantasyon ekleyin
-- Örnekler güncelleyin
-- Screenshot'lar ekleyin (gerekirse)
+### README Updates
+- Add documentation for new features
+- Update examples
+- Add screenshots if needed
 
-## 🎯 Katkı Alanları
+## 🎯 Contribution Areas
 
-### Öncelikli Alanlar
-- [ ] PDF raporlama
+### Priority Areas
+- [ ] PDF reporting
 - [ ] CSV export
-- [ ] GUI arayüzü
-- [ ] Docker desteği
-- [ ] Test coverage artırma
-- [ ] Performans optimizasyonu
+- [ ] GUI interface
+- [ ] Docker support
+- [ ] Increase test coverage
+- [ ] Performance optimization
 
-### Modül Geliştirme
-- Yeni forensic modülleri ekleyin
-- Mevcut modülleri geliştirin
-- Hata yönetimini iyileştirin
+### Module Development
+- Add new forensic modules
+- Improve existing modules
+- Enhance error handling
 
-### Raporlama
-- Yeni rapor formatları ekleyin
-- HTML raporlarını geliştirin
-- Grafik ve görselleştirme ekleyin
+### Reporting
+- Add new report formats
+- Improve HTML reports
+- Add graphs and visualizations
 
-## 🤝 İletişim
+## 🤝 Communication
 
 - **GitHub Issues:** [Issues](https://github.com/silexi/stforensicmacos/issues)
 - **Discussions:** [Discussions](https://github.com/silexi/stforensicmacos/discussions)
 
-## 📄 Lisans
+## 📄 License
 
-Bu projeye katkıda bulunarak, katkılarınızın MIT License altında lisanslanacağını kabul etmiş olursunuz.
+By contributing to this project, you agree that your contributions will be licensed under the MIT License.
 
 ---
 
-Katkıda bulunduğunuz için teşekkürler! 🎉 
+Thank you for contributing! 🎉 

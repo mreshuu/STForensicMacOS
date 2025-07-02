@@ -2,89 +2,117 @@
 
 ## Supported Versions
 
-Bu proje aşağıdaki versiyonlar için güvenlik güncellemeleri alır:
-
 | Version | Supported          |
 | ------- | ------------------ |
 | 1.0.x   | :white_check_mark: |
 
 ## Reporting a Vulnerability
 
-Güvenlik açıklarını bildirmek için:
+We take security vulnerabilities seriously. If you discover a security vulnerability in STForensicMacOS, please follow these steps:
 
-1. **Doğrudan iletişim:** Güvenlik açığını doğrudan maintainer'a bildirin
-2. **Public issue oluşturmayın:** Güvenlik açıklarını public GitHub issue olarak paylaşmayın
-3. **Detaylı bilgi sağlayın:**
-   - Açığın açıklaması
-   - Yeniden üretim adımları
-   - Etkilenen sistem bilgileri
-   - Potansiyel etki
+### 1. **DO NOT** create a public GitHub issue
+Security vulnerabilities should be reported privately to prevent potential exploitation.
 
-### İletişim Bilgileri
+### 2. **Email the maintainers**
+Send a detailed email to the project maintainers with:
+- Description of the vulnerability
+- Steps to reproduce
+- Potential impact
+- Suggested fix (if any)
 
-- **Email:** [Güvenlik email adresi]
-- **GitHub:** [GitHub Security](https://github.com/silexi/stforensicmacos/security)
+### 3. **Response timeline**
+- Initial response: Within 48 hours
+- Status update: Within 7 days
+- Resolution: As soon as possible
+
+### 4. **Disclosure policy**
+- Vulnerabilities will be disclosed after a fix is available
+- Credit will be given to reporters (unless requested otherwise)
+- CVE numbers will be requested for significant issues
 
 ## Security Features
 
-### Mevcut Güvenlik Özellikleri
+### Built-in Security Measures
 
-- **Root Yetkisi Kontrolü:** Araç sadece root yetkisi ile çalışır
-- **Salt Okuma Modu:** Orijinal veriler değiştirilmez
-- **Hash Doğrulama:** Rapor dosyaları için SHA256 hash'leri
-- **Veri Bütünlüğü:** Tüm işlemler güvenli modda
-- **Hata Yönetimi:** Güvenli hata yakalama ve loglama
+1. **Root Privilege Verification**
+   - Checks for root/administrator privileges
+   - Prevents unauthorized access
 
-### Güvenlik Prensipleri
+2. **Read-Only Operations**
+   - All forensic operations are read-only
+   - Original data is never modified
 
-1. **En Az Yetki Prensibi:** Sadece gerekli yetkiler kullanılır
-2. **Veri Koruma:** Kullanıcı verileri korunur
-3. **Şeffaflık:** Tüm işlemler loglanır
-4. **Doğrulama:** Tüm girdiler doğrulanır
+3. **Hash Verification**
+   - SHA256 hashes for all generated reports
+   - Ensures report integrity
 
-## Best Practices
+4. **Data Integrity**
+   - No data modification during analysis
+   - Preserves original timestamps
 
-### Kullanıcılar İçin
+5. **Error Handling**
+   - Graceful error handling
+   - No sensitive data exposure in error messages
 
-- Araç sadece kendi sistemlerinizde kullanın
-- Root yetkisi gerektiğini unutmayın
-- Raporları güvenli şekilde saklayın
-- Hash değerlerini doğrulayın
+### Security Best Practices
 
-### Geliştiriciler İçin
+1. **Use in Controlled Environment**
+   - Run in isolated environment
+   - Use dedicated forensic workstations
 
-- Güvenlik açıklarını hemen bildirin
-- Kod incelemesi yapın
-- Test coverage'ı artırın
-- Güvenlik testleri ekleyin
+2. **Network Security**
+   - Disconnect from network during analysis
+   - Use air-gapped systems when possible
 
-## Disclosure Policy
+3. **Access Control**
+   - Limit access to forensic tools
+   - Use strong authentication
 
-1. **Keşif:** Güvenlik açığı keşfedilir
-2. **Doğrulama:** Açık doğrulanır ve değerlendirilir
-3. **Düzeltme:** Güvenlik açığı düzeltilir
-4. **Test:** Düzeltme test edilir
-5. **Yayınlama:** Güvenlik güncellemesi yayınlanır
-6. **Bildirim:** Kullanıcılar bilgilendirilir
+4. **Data Protection**
+   - Encrypt sensitive data
+   - Secure storage of reports
+
+## Security Considerations
+
+### System Requirements
+- Requires root privileges (by design)
+- Should be run on dedicated forensic systems
+- Network access should be controlled
+
+### Data Handling
+- All operations are read-only
+- No data is transmitted externally
+- Reports contain only analysis results
+
+### Privacy
+- Respects user privacy
+- No personal data collection
+- Configurable logging levels
 
 ## Security Updates
 
-Güvenlik güncellemeleri:
+### Update Process
+1. Security patches are released as hotfixes
+2. Version numbers are incremented appropriately
+3. Security advisories are published
+4. Users are notified through GitHub releases
 
-- Kritik açıklar için: 24-48 saat içinde
-- Yüksek öncelikli açıklar için: 1 hafta içinde
-- Orta öncelikli açıklar için: 2 hafta içinde
-- Düşük öncelikli açıklar için: 1 ay içinde
+### Update Recommendations
+- Keep the tool updated to latest version
+- Monitor security advisories
+- Apply patches promptly
 
-## Responsible Disclosure
+## Contact Information
 
-Güvenlik araştırmacıları için:
+For security-related issues:
+- **Email**: [Maintainer email]
+- **GitHub**: [GitHub Issues (private)]
+- **Response Time**: 24-48 hours
 
-- Açıkları sorumlu şekilde bildirin
-- Proof-of-concept kodları paylaşın
-- Açık yayınlanmadan önce düzeltme için zaman tanıyın
-- İşbirliği yapın
+## Security Acknowledgments
+
+We thank security researchers and contributors who help improve the security of STForensicMacOS through responsible disclosure.
 
 ---
 
-Güvenlik konularında işbirliğiniz için teşekkürler! 🔒 
+**Note**: This tool is designed for educational and legal forensic analysis purposes only. Users are responsible for complying with local laws and regulations. 

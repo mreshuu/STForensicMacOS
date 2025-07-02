@@ -11,71 +11,71 @@
   "modules": [
     {
       "name": "system_info",
-      "description": "Sistem bilgileri toplama",
+      "description": "System information collection",
       "dependencies": ["psutil", "platform"],
       "commands": ["system_profiler", "ioreg", "sysctl"]
     },
     {
       "name": "filesystem",
-      "description": "Dosya sistemi analizi",
+      "description": "Filesystem analysis",
       "dependencies": ["hashlib", "os", "stat"],
       "commands": ["find", "md5", "sha256", "ls"]
     },
     {
       "name": "memory",
-      "description": "Bellek analizi",
+      "description": "Memory analysis",
       "dependencies": ["psutil"],
       "commands": ["vm_stat", "top", "lsof"]
     },
     {
       "name": "network",
-      "description": "Ağ analizi",
+      "description": "Network analysis",
       "dependencies": ["psutil", "socket"],
       "commands": ["netstat", "ifconfig", "arp", "route"]
     },
     {
       "name": "logs",
-      "description": "Log analizi",
+      "description": "Log analysis",
       "dependencies": ["re", "datetime"],
       "commands": ["log", "system.log", "auth.log"]
     },
     {
       "name": "processes",
-      "description": "Process analizi",
+      "description": "Process analysis",
       "dependencies": ["psutil"],
       "commands": ["ps", "lsof", "launchctl"]
     },
     {
       "name": "users",
-      "description": "Kullanıcı analizi",
+      "description": "User analysis",
       "dependencies": ["pwd", "grp"],
       "commands": ["dscl", "id", "who"]
     },
     {
       "name": "timeline",
-      "description": "Zaman çizelgesi analizi",
+      "description": "Timeline analysis",
       "dependencies": ["datetime", "stat"],
       "commands": ["find", "stat", "mdls"]
     }
   ],
   "modes": {
     "lite": {
-      "description": "Hızlı analiz - Temel bilgiler",
+      "description": "Quick analysis - Basic information",
       "modules": ["system_info", "processes", "network", "users"],
-      "estimated_time": "1-2 dakika"
+      "estimated_time": "1-2 minutes"
     },
     "full": {
-      "description": "Tam imaj - Kapsamlı analiz",
+      "description": "Complete image - Comprehensive analysis",
       "modules": ["system_info", "filesystem", "memory", "network", "logs", "processes", "users", "timeline"],
-      "estimated_time": "12-15 dakika"
+      "estimated_time": "12-15 minutes"
     }
   },
   "output_formats": ["json", "html", "pdf", "csv"],
   "security_requirements": ["root_access", "read_only", "hash_verification"],
   "development_phases": [
-    "Phase 1: Temel modüller",
-    "Phase 2: Raporlama sistemi",
-    "Phase 3: GUI arayüzü",
-    "Phase 4: Gelişmiş analizler"
+    "Phase 1: Core modules",
+    "Phase 2: Reporting system",
+    "Phase 3: GUI interface",
+    "Phase 4: Advanced analysis"
   ]
 } 

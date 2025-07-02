@@ -4,177 +4,177 @@
 [![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 [![Platform](https://img.shields.io/badge/Platform-macOS-lightgrey.svg)](https://www.apple.com/macos/)
 
-MacOS sistemleri için geliştirilmiş modüler forensic analiz aracı. Olay anında hızlı kurulum ve sistem imajı alma özellikleri ile donatılmıştır.
+A modular forensic analysis tool developed for MacOS systems. Equipped with rapid deployment and system imaging capabilities for incident response.
 
-## 🚀 Özellikler
+## 🚀 Features
 
-- **🔧 Modüler Yapı**: Her analiz türü için ayrı modüller
-- **⚡ Hızlı Kurulum**: Tek komutla kurulum ve çalıştırma
-- **📊 İki Analiz Modu**: Lite (hızlı analiz) ve Full (tam imaj)
-- **📄 Otomatik Raporlama**: HTML, JSON formatlarında detaylı raporlar
-- **🔍 Gerçek Zamanlı Analiz**: Sistem durumu ve değişikliklerin takibi
-- **🔒 Güvenlik Odaklı**: Sadece okuma işlemleri, veri bütünlüğü korunur
+- **🔧 Modular Architecture**: Separate modules for each analysis type
+- **⚡ Quick Setup**: Single command installation and execution
+- **📊 Two Analysis Modes**: Lite (quick analysis) and Full (complete imaging)
+- **📄 Automatic Reporting**: Detailed reports in HTML and JSON formats
+- **🔍 Real-time Analysis**: System status and change tracking
+- **🔒 Security-Focused**: Read-only operations, data integrity preserved
 
-## 📋 Modüller
+## 📋 Modules
 
-### 🔍 Sistem Bilgileri
-- Donanım bilgileri (CPU, RAM, Disk)
-- İşletim sistemi detayları
-- Sistem yapılandırması
-- Çevre değişkenleri
+### 🔍 System Information
+- Hardware information (CPU, RAM, Disk)
+- Operating system details
+- System configuration
+- Environment variables
 
-### 📁 Dosya Sistemi Analizi
-- Dosya sistemi yapısı
-- Dosya hash'leri (MD5, SHA256)
-- Zaman damgaları
-- Silinmiş dosya kurtarma (temel)
+### 📁 Filesystem Analysis
+- Filesystem structure
+- File hashes (MD5, SHA256)
+- Timestamps
+- Deleted file recovery (basic)
 
-### 🧠 Bellek Analizi
-- RAM durumu ve kullanımı
-- Kernel modülleri
-- Bellek haritası
-- Swap durumu
+### 🧠 Memory Analysis
+- RAM status and usage
+- Kernel modules
+- Memory mapping
+- Swap status
 
-### 🌐 Ağ Analizi
-- Aktif bağlantılar (IPv4/IPv6)
-- Routing tablosu
-- DNS bilgileri
-- Firewall kuralları
+### 🌐 Network Analysis
+- Active connections (IPv4/IPv6)
+- Routing table
+- DNS information
+- Firewall rules
 
-### 📝 Log Analizi
-- Sistem logları
-- Uygulama logları
-- Güvenlik logları
-- Crash logları
+### 📝 Log Analysis
+- System logs
+- Application logs
+- Security logs
+- Crash logs
 
-### ⚙️ Process Analizi
-- Çalışan processler
-- Process detayları
-- Sistem servisleri
-- Açık dosyalar
+### ⚙️ Process Analysis
+- Running processes
+- Process details
+- System services
+- Open files
 
-### 👥 Kullanıcı Analizi
-- Kullanıcı hesapları
-- Grup bilgileri
-- Yetki seviyeleri
-- Oturum bilgileri
+### 👥 User Analysis
+- User accounts
+- Group information
+- Permission levels
+- Session information
 
-### ⏰ Zaman Çizelgesi Analizi
-- Dosya zaman çizelgesi
-- Sistem olayları
-- Kullanıcı aktiviteleri
+### ⏰ Timeline Analysis
+- File timeline
+- System events
+- User activities
 
-## 🛠️ Kurulum
+## 🛠️ Installation
 
-### Gereksinimler
-- macOS 10.15 veya üzeri
+### Requirements
+- macOS 10.15 or higher
 - Python 3.8+
-- Root/Administrator yetkisi
+- Root/Administrator privileges
 
-### Adımlar
+### Steps
 
-1. **Repository'yi klonlayın:**
+1. **Clone the repository:**
 ```bash
 git clone https://github.com/silexi/stforensicmacos.git
 cd stforensicmacos
 ```
 
-2. **Gereksinimleri yükleyin:**
+2. **Install dependencies:**
 ```bash
 pip3 install -r requirements.txt
 ```
 
-3. **Çalıştırın:**
+3. **Run:**
 ```bash
 sudo python3 main.py --mode lite
 ```
 
-## 📖 Kullanım
+## 📖 Usage
 
-### Temel Kullanım
+### Basic Usage
 
 ```bash
-# Hızlı analiz (Lite mode)
+# Quick analysis (Lite mode)
 sudo python3 main.py --mode lite --output ./reports
 
-# Tam analiz (Full mode)
+# Full analysis (Full mode)
 sudo python3 main.py --mode full --output ./reports
 
-# Belirli modülleri çalıştır
+# Run specific modules
 sudo python3 main.py --modules system_info,filesystem,network --output ./reports
 
-# HTML raporu oluştur
+# Generate HTML report
 sudo python3 main.py --mode lite --output ./reports --format html
 ```
 
-### Komut Satırı Seçenekleri
+### Command Line Options
 
 ```bash
 python3 main.py [OPTIONS]
 
 Options:
-  --mode TEXT           Analiz modu: lite veya full [default: lite]
-  --modules TEXT        Çalıştırılacak modüller (virgülle ayrılmış)
-  --output TEXT         Rapor çıktı dizini [default: ./reports]
-  --format TEXT         Rapor formatı: json, html [default: json]
-  --verbose, -v         Detaylı çıktı
-  --no-hash             Hash hesaplamalarını atla
-  --config TEXT         Konfigürasyon dosyası yolu
-  --help                Bu mesajı göster
+  --mode TEXT           Analysis mode: lite or full [default: lite]
+  --modules TEXT        Modules to run (comma-separated)
+  --output TEXT         Report output directory [default: ./reports]
+  --format TEXT         Report format: json, html [default: json]
+  --verbose, -v         Verbose output
+  --no-hash             Skip hash calculations
+  --config TEXT         Configuration file path
+  --help                Show this message
 ```
 
-### Örnekler
+### Examples
 
 ```bash
-# Hızlı sistem analizi
+# Quick system analysis
 sudo python3 main.py --mode lite --output ./forensic_reports
 
-# Sadece ağ analizi
+# Network analysis only
 sudo python3 main.py --modules network --output ./network_analysis
 
-# Tam analiz + HTML raporu
+# Full analysis + HTML report
 sudo python3 main.py --mode full --output ./full_analysis --format html
 
-# Detaylı çıktı ile belirli modüller
+# Specific modules with verbose output
 sudo python3 main.py --modules system_info,processes,users --verbose --output ./detailed_analysis
 ```
 
-## 📊 Raporlar
+## 📊 Reports
 
-### JSON Raporu
-Yapılandırılmış veri formatında tüm analiz sonuçları.
+### JSON Report
+Structured data format containing all analysis results.
 
-### HTML Raporu
-Modern, interaktif web tabanlı rapor:
-- Modül bazlı tablolar
-- Arama ve filtreleme
-- Responsive tasarım
-- Detaylı veri görüntüleme
+### HTML Report
+Modern, interactive web-based report:
+- Module-based tables
+- Search and filtering
+- Responsive design
+- Detailed data viewing
 
-## 🔒 Güvenlik
+## 🔒 Security
 
-- **Root Yetkisi**: Bu araç root/administrator yetkisi gerektirir
-- **Sadece Okuma**: Orijinal veriler değiştirilmez
-- **Hash Doğrulama**: Rapor dosyaları için SHA256 hash'leri
-- **Veri Bütünlüğü**: Tüm işlemler salt okuma modunda
+- **Root Privileges**: This tool requires root/administrator privileges
+- **Read-Only**: Original data is never modified
+- **Hash Verification**: SHA256 hashes for report files
+- **Data Integrity**: All operations in read-only mode
 
-## 🏗️ Proje Yapısı
+## 🏗️ Project Structure
 
 ```
 stforensicmacos/
-├── main.py                 # Ana uygulama
-├── requirements.txt        # Python bağımlılıkları
-├── README.md              # Bu dosya
+├── main.py                 # Main application
+├── requirements.txt        # Python dependencies
+├── README.md              # This file
 ├── LICENSE                # MIT License
-├── .gitignore            # Git ignore kuralları
-├── project_details.json   # Proje detayları
-├── roadmap.md            # Geliştirme yol haritası
-├── src/                  # Kaynak kod
-│   ├── core/             # Çekirdek modüller
-│   │   ├── config.py     # Konfigürasyon yönetimi
-│   │   ├── forensic_engine.py  # Ana analiz motoru
-│   │   └── logger.py     # Logging sistemi
-│   ├── modules/          # Forensic modüller
+├── .gitignore            # Git ignore rules
+├── project_details.json   # Project details
+├── roadmap.md            # Development roadmap
+├── src/                  # Source code
+│   ├── core/             # Core modules
+│   │   ├── config.py     # Configuration management
+│   │   ├── forensic_engine.py  # Main analysis engine
+│   │   └── logger.py     # Logging system
+│   ├── modules/          # Forensic modules
 │   │   ├── base_module.py
 │   │   ├── system_info.py
 │   │   ├── filesystem.py
@@ -184,44 +184,44 @@ stforensicmacos/
 │   │   ├── processes.py
 │   │   ├── users.py
 │   │   └── timeline.py
-│   ├── reporters/        # Raporlayıcılar
+│   ├── reporters/        # Reporters
 │   │   ├── json_reporter.py
 │   │   └── html_reporter.py
-│   └── utils/            # Yardımcı fonksiyonlar
+│   └── utils/            # Helper functions
 │       └── helpers.py
-├── static/               # Statik dosyalar
-├── templates/            # HTML şablonları
-└── test_reports/         # Test raporları
+├── static/               # Static files
+├── templates/            # HTML templates
+└── test_reports/         # Test reports
 ```
 
-## 🤝 Katkıda Bulunma
+## 🤝 Contributing
 
-1. Bu repository'yi fork edin
-2. Feature branch oluşturun (`git checkout -b feature/amazing-feature`)
-3. Değişikliklerinizi commit edin (`git commit -m 'Add amazing feature'`)
-4. Branch'inizi push edin (`git push origin feature/amazing-feature`)
-5. Pull Request oluşturun
+1. Fork this repository
+2. Create a feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
 
-## 📝 Lisans
+## 📝 License
 
-Bu proje MIT License altında lisanslanmıştır. Detaylar için [LICENSE](LICENSE) dosyasına bakın.
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
-## ⚠️ Uyarı
+## ⚠️ Disclaimer
 
-Bu araç sadece eğitim ve yasal forensic analiz amaçları için tasarlanmıştır. Kullanıcılar, bu aracı kullanırken yerel yasaları ve düzenlemeleri takip etmekten sorumludur.
+This tool is designed for educational and legal forensic analysis purposes only. Users are responsible for complying with local laws and regulations when using this tool.
 
-## 📞 İletişim
+## 📞 Contact
 
-- **Proje Linki**: [https://github.com/silexi/stforensicmacos](https://github.com/silexi/stforensicmacos)
-- **Sorunlar**: [GitHub Issues](https://github.com/silexi/stforensicmacos/issues)
+- **Project Link**: [https://github.com/silexi/stforensicmacos](https://github.com/silexi/stforensicmacos)
+- **Issues**: [GitHub Issues](https://github.com/silexi/stforensicmacos/issues)
 
-## 🙏 Teşekkürler
+## 🙏 Acknowledgments
 
-Bu proje aşağıdaki açık kaynak projelerden ilham almıştır:
+This project is inspired by the following open source projects:
 - [Volatility](https://github.com/volatilityfoundation/volatility)
 - [Autopsy](https://github.com/sleuthkit/autopsy)
 - [The Sleuth Kit](https://github.com/sleuthkit/sleuthkit)
 
 ---
 
-⭐ Bu projeyi beğendiyseniz yıldız vermeyi unutmayın! 
+⭐ Don't forget to star this project if you like it! 
